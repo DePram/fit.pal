@@ -1,0 +1,292 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  width: 100%;
+}
+
+body {
+  background-color: lightgray;
+  font-size: 18px;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  margin: 50px;
+}
+
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-light {
+  font-family: "Roboto", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.container {
+  display: grid;
+  gap: 10px;
+}
+
+/* header */
+.header {
+  display: grid;
+  grid-template-areas:
+    "hero hero feature-1"
+    "hero hero feature-2";
+}
+
+.hero {
+  grid-area: hero;
+  min-height: 300px;
+  background-image: url(img/hero\ img.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 50px;
+}
+
+.hero h2,
+.hero p {
+  display: none;
+}
+
+.features {
+  color: white;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.feature-1 {
+  grid-area: feature-1;
+  background-image: url(img/dumbell.jpg);
+  background-size: cover;
+}
+
+.feature-2 {
+  grid-area: feature-2;
+  background-image: url(img/t\ shirt.jpg);
+  background-size: cover;
+}
+
+.features .price {
+  font-size: 1.8em;
+  font-weight: 250;
+}
+
+/* nav */
+.menu {
+  order: -1;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+}
+
+.menu .brand {
+  font-size: 1.3em;
+  color: rgb(39, 39, 39);
+}
+
+.menu ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 5px;
+}
+
+.menu a {
+  display: block;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  padding: 5px;
+  text-transform: uppercase;
+}
+
+/* hamburger menu */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  position: relative;
+}
+
+.menu-toggle input {
+  position: absolute;
+  width: 30px;
+  height: 28px;
+  left: -6px;
+  top: -5px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.menu-toggle span {
+  display: flex;
+  width: 28px;
+  height: 3px;
+  background-color: white;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+
+/* menu animation */
+.menu-toggle span:nth-child(2) {
+  transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+  transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+  transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4) {
+  transform: rotate(-45deg) translate(-0.8px, 0);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+  transform: scale(0);
+}
+
+/* servis */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  order: 1;
+  gap: 20px;
+}
+
+.service {
+  background-color: white;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+  border-radius: 3px;
+}
+
+.services a {
+  text-decoration: none;
+  color: black;
+}
+
+.service .icon {
+  font-size: 2em;
+}
+
+.service h3 {
+  font-size: 2em;
+}
+
+.service p {
+  font-weight: 200;
+}
+
+.galerry {
+  margin-top: 80px;
+  order: 3;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.galerry h2 {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* responsive breakpoint */
+
+@media (max-width: 1130px) {
+  .menu {
+    order: 1;
+    grid-template-columns: 1fr;
+  }
+
+  .brand {
+    display: none;
+  }
+
+  .hero h2,
+  .hero p {
+    display: block;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    margin-bottom: 5px;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+  }
+
+  .services {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .menu {
+    order: -1;
+    justify-items: end;
+  }
+  .menu-toggle {
+    display: flex;
+    z-index: 92;
+  }
+
+  .menu ul {
+    display: flex;
+    position: absolute;
+    right: 0;
+    flex-direction: column;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    align-items: center;
+    justify-content: space-evenly;
+    transform: translateY(-100%);
+    transition: all 1s;
+    z-index: 1;
+  }
+
+  .menu a {
+    font-size: 40px;
+    font-weight: 800;
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  nav ul.slide {
+    transform: translatey(0);
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    margin: 15px;
+  }
+  .header {
+    grid-template-areas:
+      "hero"
+      "feature-1"
+      "feature-2";
+  }
+
+  .services {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
