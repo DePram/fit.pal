@@ -14,10 +14,20 @@
   </head>
   <body>
     <div class="container">
+      <header>
+        <div class="brand-dua">
+          <h1>Diet</h1>
+          <p>sumber : fatsecret.co.id</p>
+        </div>
+      </header>
       <nav class="menu">
         <div class="brand">
           <h1>Diet</h1>
           <p>sumber : fatsecret.co.id</p>
+        </div>
+        <div class="menu-toggle">
+          <input type="checkbox" />
+          <span></span><span></span><span></span>
         </div>
         <ul class="menu-list">
           <li><a href="home.html">Home</a></li>
@@ -88,5 +98,14 @@
         </div>
       </div>
     </div>
+
+    <script>
+      const menuToggle = document.querySelector(".menu-toggle input");
+      const nav = document.querySelector("nav ul");
+
+      menuToggle.addEventListener("click", function () {
+        nav.classList.toggle("slide");
+      });
+    </script>
   </body>
 </html>
