@@ -225,13 +225,13 @@ header .brand-dua {
   .brand-dua h1 {
     font-size: 3.5em;
   }
-  
+
   .brand-dua p {
     font-size: 1.3em;
   }
 
   .brand {
-   display: none;
+    display: none;
   }
 
   .menu {
@@ -282,5 +282,4 @@ header .brand-dua {
 }
 
 @media (max-width: 680px) {
-
 }
