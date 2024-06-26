@@ -113,7 +113,7 @@ body {
 }
 
 .kal {
-  fill: blue;
+  fill: rgb(74, 74, 163);
 }
 
 .fat {
@@ -140,9 +140,6 @@ body {
 .food {
   background-color: white;
   padding: 20px;
-  box-sizing: border-box;
-  width: 200px;
-  height: 200px;
   text-align: center;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
   border-radius: 3px;
