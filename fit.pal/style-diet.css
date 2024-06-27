@@ -144,7 +144,7 @@ header .brand-dua {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 25px;
   margin-top: 5%;
-  overflow-x: auto;
+  overflow: auto;
 }
 
 .food {
@@ -171,6 +171,7 @@ header .brand-dua {
   height: 20px;
   justify-content: space-between;
   position: relative;
+  margin: 30px 30px 0px 0px;
 }
 
 .menu-toggle input {
@@ -255,11 +256,16 @@ header .brand-dua {
 
   .foods {
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    gap: 97px;
+    gap: 105px;
   }
 }
 
 @media (max-width: 768px) {
+  body,
+  .foods {
+    margin: 15px;
+  }
+
   .menu {
     order: -1;
     justify-items: end;
