@@ -260,11 +260,6 @@ header .brand-dua {
 }
 
 @media (max-width: 768px) {
-  body,
-  .foods {
-    margin: 15px;
-  }
-
   .menu {
     order: -1;
     justify-items: end;
@@ -299,7 +294,37 @@ header .brand-dua {
   nav ul.slide {
     transform: translatey(0);
   }
+
+  .main {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr repeat(4, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .kal {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+
+  .fat {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+  }
+
+  .prot {
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+  }
+
+  .karb {
+    grid-column: 1 / 2;
+    grid-row: 5 / 6;
+  }
 }
 
 @media (max-width: 680px) {
+  body {
+    margin: 15px;
+  }
 }
