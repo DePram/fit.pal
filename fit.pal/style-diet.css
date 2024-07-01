@@ -140,17 +140,16 @@ header .brand-dua {
 }
 
 .foods {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 25px;
+  white-space: nowrap;
   margin-top: 5%;
   overflow: auto;
 }
 
 .food {
+  display: inline-block;
   background-color: white;
-  width: 200px;
-  height: 200px;
+  padding: 20px;
+  margin-left: 20px;
   text-align: center;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
   border-radius: 3px;
